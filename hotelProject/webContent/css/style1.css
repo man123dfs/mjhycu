@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;300;400&family=Nanum+Gothic&family=Poiret+One&display=swap');
+
+*{margin:0; padding:0;}
+body{font:12px/1.6 'Poiret One', cursive;
+	 color:#555;}
+ul{list-style:none;}
+	a{text-decoration:none;
+	  color:#555;}
+	  
+/*레이아웃 스타일 */
+html,body{height:100%; width:100%;}
+header{
+		width:15%;
+		height:100%;
+		background:white;
+		top:0;
+		left:0;
+		position:fixed;
+		box-shadow:1px 0 20px rgba(0,0,0,0.1);
+		z-index:5;
+}
+.rightWrap{
+	width:85%;
+	position:relative;
+	left:15%;
+	top:0;
+}
+
+.lnb{
+	position:relative;
+	width:100%;
+	height:35px;
+	background:#212121;
+}
+section{
+	background:#ffa;
+}
+	
+article{
+	width:20%;
+	height:260px;
+	overflow:hidden;
+	float:left;
+	animation:boxScale 1s 1;
+}
+article:nth-child(1){width:60%; height:520px; background:#eee;}
+article:nth-child(2){width:40%; background:#ddd;}
+article:nth-child(3){background:#ccc;}
+article:nth-child(4){background:#bbb;}
+article:nth-child(5){background:#aaa;}
+article:nth-child(6){width:40%; background:#999;}
+article:nth-child(7){background:#888;}
+article:nth-child(8){background:#777;}
+article:nth-child(9){width:40%; background:#666;}
+article:nth-child(10){background:#555;}
+article:nth-child(11){background:#444;}
+article:nth-child(12){background:#333;}
+
+
+@keyframes boxScale{
+	0%{ transform:scale(0);}
+	100%{transform:scale(1);}
+}
+
+
+
+
+article>div{
+	position:relative;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	cursor:pointer;
+	
+	
+}
+
+
+/*header style */
+.logo{
+	background: url(../img/logo1.png) no-repeat center center;
+	position:absolute;
+	width:180px;
+	height:136px;
+	left:50%;
+	top:60px;
+	transform:translateX(-50%);
+	text-indent:-99999px;
+	overflow:hidden
+	
+}
+.gnb{
+	position:absolute;
+	top:300px;
+	right:60px;
+	
+}
+.gnb ul{}
+.gnb ul li{}
+.gnb ul li a{
+	font-size:1.5em;
+	padding:8px 30px;
+	display:block;
+	font-weight:bold;
+	transition:all 0.5s;
+}
+.gnb ul li a:hover{color:skyblue;}
+
+
+.snsSet{
+	position:absolute;
+	bottom:50px;
+	right:50%;
+	width:90px;
+	/*margin-right:-45px;*/
+	 
+	transform:translateX(50%);
+}
+
+.snsSet img{float:left;}
+
+/*nav.lnb style */
+.lnb a{
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+}
+.lnb a:nth-child(1){left:10px;}
+.lnb a:nth-child(2){left:140px;}
+.lnb a:nth-child(3){right:90px;}
+.lnb a:nth-child(4){right:10px;}
+
+/*article 배경이미지 삽입 */
+article .bg1{background-image:url(../img/pic1.jpg);}
+article .bg2{background-image:url(../img/pic2.jpg);}
+article .bg3{background-image:url(../img/pic3.jpg);}
+article .bg4{background-image:url(../img/pic4.jpg);}
+article .bg5{background-image:url(../img/pic5.jpg);}
+article .bg6{background-image:url(../img/pic6.jpg);}
+article .bg7{background-image:url(../img/pic7.jpg);}
+
+/*배경 이미지영역 공통스타일 */
+article .bg{
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	}
+	
+article .bg span{
+	font-size:60px;
+	position:absolute;
+	right:20px;
+	bottom:0px;
+	color:white;
+	transform:scale(10);
+	transition:0.5s;
+	opacity:0;
+	
+}
+
+article:hover .bg span{
+	transform:scale(1);
+	opacity:1;
+}
+
+article .bg1 span{
+	font-size:170px;
+	opacity:1;
+	transform:scale(1);
+	bottom:-75px;
+	right:0px;
+	transform:rotate(0deg);
+}
+
+article:hover .bg1 span{
+	color:#222;
+	transform:rotate(360deg);
+}
+
+/*텍스트 박스 style */
+article .txt{
+	background:white;
+	transition:all 1s;
+	display:table;
+}
+
+article:nth-child(3) .txt{background:#bff7fa;}
+article:nth-child(11) .txt{background:white;}
+
+article .txt p{
+	display:table-cell;
+	vertical-align:middle; 
+	padding-left:40px;
+	}
+
+article .txt strong{
+	font-size:2.5em;
+	font-weight:normal;
+}
+article .txt em{
+	font-size:1.1em;
+}
+
+article:hover .txt{background:#6ce2fa; color:white;}
+
+@media screen and (max-width:1560px){
+	
+	header{
+		width:100%;
+		height:80px;
+		position:relative;	
+	}
+	.rightWrap{
+		width:100%;
+		left:0%;
+	}
+		
+	/*header style */
+	.logo{
+		background:url(../img/logo2.png) no-repeat center center;
+		width:250px;
+		height:50px;
+		left:10px;
+		top:50%;
+		transform:translateY(-50%);
+		background-size:cover;
+		
+	}
+	.gnb{
+		position:absolute;
+		top:20px;
+		right:200px;
+		
+		
+	}
+	.gnb ul{overflow:auto;}
+	.gnb ul li{float:left;}
+	
+	.snsSet{
+		bottom:16.5px;
+		right:10px;
+		width:90px;
+		margin-right:0px;
+		/* right:50%;*/
+		transform:translateX(0%);
+	}
+
+}
+
+
+@media screen and (max-width:1280px){
+	
+	
+	.gnb{right:-10px;}
+	.snsSet{display:none;}
+	
+	/* 레이아웃 */
+	article:nth-child(1){width:100%; height:500px;}
+	article:nth-child(2){width:100%;}
+	article:nth-child(3){width:50%;}
+	article:nth-child(4){width:50%;}
+	article:nth-child(5){width:50%;}
+	article:nth-child(6){width:50%;}
+	article:nth-child(7){width:50%;}
+	article:nth-child(8){width:50%;}
+	article:nth-child(9){width:50%;}
+	article:nth-child(10){width:50%;}
+	article:nth-child(11){width:50%;}
+	article:nth-child(12){width:50%;}
+	
+
+}
+
+@media screen and (max-width:780px){
+	
+	/*레이아웃 스타일 */
+	header{height:120px;}	
+	.lnb{display:none;}
+	article{height:200px;}
+	article:nth-child(1){height:400px;}	
+	
+	
+	/*header style */
+	.logo{
+		left:50%;
+		top:20px;
+		transform:translateX(-50%);
+		width:200px;
+		background-size:contain;
+		
+	}
+	
+	.gnb{
+		top:75px;
+		right:0px;
+		width:100%;		
+	}
+	
+	.gnb ul li{width:25%;}
+	
+}
+
+@media screen and (max-width:500px){
+	
+	/*레이아웃 스타일 */
+	header{
+		width:100%;
+		height:80%;
+		background:transparent;
+		box-shadow:none;
+	}	
+	article{display:none;}
+	article:nth-child(1){
+		display:block;
+		height:100%;
+		width:100%;
+		position:fixed;
+		left:0;
+		top:0;
+		}	
+	
+	
+	/*header style */
+	.logo{
+		background:url(../img/logo1.png) no-repeat center center;
+		width:180px;
+		height:136px;
+		top:50px;
+		
+	}
+	
+	.gnb{
+		top:250px;
+		width:60%;
+		right:50%;
+		margin-right:-30%;
+	}
+	
+	.gnb ul{overflow:visible;}
+	
+	.gnb ul li{
+		width:100%; 
+		clear:left;
+		margin-bottom:15px;}
+	
+	.gnb ul li a{
+		background:black;
+		padding:12px 30px;
+		color:white;
+		text-align:center;
+		border-radius:28px;
+		letter-spacing:1.5px;
+		opacity:0.6;
+		transform:scaleX(1);	
+		
+	}
+	.gnb ul li a:hover{
+		transform:scaleX(1.1);
+		opacity:1;
+		}
+		
+}
