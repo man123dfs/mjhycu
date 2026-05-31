@@ -1,0 +1,662 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*클릭 이동*/
+html{
+    scroll-behavior: smooth;
+}
+
+#about,
+#project,
+#contact {
+    scroll-margin-top: 76px;
+}
+
+
+body {
+    margin: 0;
+    padding-top: 76px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2b2927;
+    background-color: #faf7f2;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(43, 41, 39, 0.08);
+}
+
+.nav_list {
+    height: 76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    list-style: none;
+}
+
+.nav_list a {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #2b2927;
+    transition: opacity 0.3s ease;
+}
+
+.nav_list a:hover{
+    opacity: 0.5;
+}
+
+.container{
+    max-width: 1920px;
+    width: calc(100% - 160px);
+    margin: 0 auto;
+}
+
+/*Header*/
+
+header {
+    min-height: calc(100vh - 76px);
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(circle at 85% 18%, rgba(190, 169, 153, 0.26), transparent 28%),
+        linear-gradient(180deg, #faf7f2 0%, #f4eee7 100%);
+}
+
+.row{
+    display: grid;
+    grid-template-columns: 1.25fr 0.9fr;
+    gap: 90px;
+    align-items: center;
+    padding: 90px 0;
+}
+
+.section_label,
+.project_tag{
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: #a48d7b;
+    margin-bottom: 18px;
+}
+
+h1,
+h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    color: #2b2927;
+}
+
+h1{
+    font-size: 64px;
+    line-height: 1.05;
+    letter-spacing: -1.4px;
+    margin-bottom: 28px;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+    margin-bottom: 32px;
+}
+
+h3{
+    font-size: 22px;
+    line-height: 1.35;
+    font-weight: 500;
+    color: #2b2927;
+    margin-bottom: 12px;
+}
+
+h4{
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    color: #a48d7b;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+p{
+    color: #68615c;
+    line-height: 1.85;
+}
+
+.intro{
+    max-width: 560px;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.profile{
+    list-style: none;
+    margin-bottom: 36px;
+}
+
+.profile li {
+    color: #68615c;
+    line-height: 1.9;
+}
+
+.button{
+    display: inline-block;
+    padding: 13px 30px;
+    border: 1px solid #2b2927;
+    border-radius: 999px;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.button:hover{
+    background-color: #2b2927;
+    color: #ffffff;
+}
+
+.col-sm{
+    width: 100%;
+}
+
+.intro_img{
+    width: 380px;
+    height: 500px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 36px;
+    box-shadow: 24px 24px 0 rgba(164, 141, 123, 0.18);
+}
+
+figcaption{
+    margin-top: 16px;
+    font-size: 11px;
+    color: #a48d7b;
+    text-align: right;
+}
+
+/*about*/
+
+.about {
+    background-color: #ffffff;
+    padding: 110px 0;
+}
+
+.about_intro{
+    margin-bottom: 100px;
+}
+
+.about_intro h2{
+    margin-bottom: 72px;
+}
+
+.about_description{
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.9;
+   /* padding-bottom: 30px;*/
+}
+
+.about_card{
+    padding: 34px;
+    background-color: #faf7f2;
+    border-radius: 30px;
+    border: 1px solid rgba(43, 41, 39, 0.05);
+}
+
+.about_card h3 {
+    margin-bottom: 30px;
+}
+
+.about_info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+/* 경험 */
+
+.experience_timeline{
+    position: relative;
+}
+
+.experience_item{
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 26px;
+    position: relative;
+    padding: 0 0 30px 0;
+}
+
+.experience_item:not(:last-child){
+    border-bottom: 1px solid rgba(43, 41, 39, 0.1);
+    margin-bottom: 30px;
+}
+
+.experience_date{
+    font-size: 13px;
+    color: #a48d7b;
+    line-height: 1.6;
+}
+
+.experience_heading{
+    font-size: 15px;
+    line-height: 1.45;
+    color: #2b2927;
+    margin-bottom: 12px;
+}
+
+.experience_heading span{
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.experience_info{
+    font-size: 14px;
+    color: #68615c;
+    line-height: 1.7;
+}
+
+/* 스킬 */
+
+.skill_list{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+.skill_list li{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(43, 41, 39, 0.1);
+}
+
+.skill_list li:first-child{
+    padding-top: 0;
+}
+
+.skill_list span{
+    color: #2b2927;
+}
+
+.skill_list strong{
+    font-size: 13px;
+    font-weight: 400;
+    color: #a48d7b;
+}
+
+/*project*/
+
+.project{
+    background-color: #f4eee7;
+    padding: 110px 0;
+}
+
+.project h2{
+    margin-bottom: 32px;
+}
+
+.project_list{
+    display: grid;
+    gap: 26px;
+}
+
+.project_box{
+    display: grid;
+    grid-template-columns: 70px 260px 1fr;
+    gap: 34px;
+    align-items: center;
+    padding: 28px;
+    background-color: #ffffff;
+    border-radius: 34px;
+    border: 1px solid rgba(43, 41, 39, 0.06);
+    transition: all 0.3s ease;
+}
+
+.project_box:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(43, 41, 39, 0.08);
+}
+
+.project_num{
+    font-family: "Baskervville", Georgia, serif;
+    font-size: 28px;
+    color: #c2ab98;
+}
+
+.project_box img{
+    width: 260px;
+    height: 170px;
+    object-fit: contain;
+    background-color: #faf7f2;
+    border-radius: 24px;
+    padding: 18px;
+}
+
+.project_tag{
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.project_box p{
+    font-size: 15px;
+}
+
+.project_box .project_tag{
+    font-size: 12px;
+}
+
+.project_box .right_text p {
+    margin-top: 0;
+}
+
+
+
+/*Contact*/
+
+.contact {
+    background-color: #faf7f2;
+    padding: 110px 0 70px;
+    text-align: center;
+}
+
+.contact_intro {
+    max-width: 620px;
+    margin: 0 auto 54px;
+    font-size: 16px;
+}
+
+.contact_info {
+    width: fit-content;
+    margin: 0 auto 70px;
+    display: flex;
+    gap: 80px;
+}
+
+.contact_info div{
+    padding: 28px;
+    text-align: center;
+}
+
+.contact_info div:last-child{
+    position: relative;
+    right: 20px;
+}
+
+.contact_info a {
+    transition: opacity 0.3s ease;
+}
+
+.contact_info a:hover {
+    opacity: 0.5;
+}
+
+.contact_info div {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.contact_info div:hover {
+    transform: scale(1.06);
+}
+
+.copyright {
+    padding-top: 28px;
+    border-top: 1px solid rgba(43, 41, 39, 0.08);
+    font-size: 12px;
+    color: #9a918a;
+}
+
+/*줄였을 때*/
+
+@media (max-width: 850px) {
+    body {
+        padding-top: 68px;
+    }
+
+    #about,
+    #project,
+    #contact {
+        scroll-margin-top: 68px;
+    }
+
+    .nav_list {
+        height: 68px;
+        gap: 18px;
+    }
+
+    .nav_list a {
+        font-size: 10px;
+        letter-spacing: 1.1px;
+    }
+
+    .container {
+        width: min(100% - 36px, 1080px);
+    }
+
+    .row,
+    .about_info,
+    .project_box,
+    .contact_info {
+        grid-template-columns: 1fr;
+    }
+
+    .row {
+        gap: 50px;
+        padding: 72px 0;
+    }
+
+    h1 {
+        font-size: 44px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    .intro_img {
+        width: 100%;
+        height: 440px;
+    }
+
+    figcaption {
+        text-align: left;
+    }
+
+    .about,
+    .project,
+    .contact {
+        padding: 82px 0;
+    }
+
+    .about_intro {
+        margin-bottom: 54px;
+    }
+
+    .about_intro h2 {
+        margin-bottom: 34px;
+    }
+
+    .about_description {
+        text-align: left;
+        margin: 0;
+    }
+
+    .about_card {
+        padding: 30px 24px;
+    }
+
+    .experience_item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .project_box {
+        gap: 20px;
+        padding: 24px;
+    }
+
+    .project_box img {
+        width: 100%;
+        height: 210px;
+    }
+
+    .contact_info {
+        gap: 20px;
+    }
+
+    .contact_info div:last-child {
+        right: 0;
+    }
+}
+
+/*효과*/
+
+header .section_label{
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeUp 1.2s ease forwards;
+}
+
+header h1{
+    opacity: 0;
+    transform: translateY(22px);
+    animation: fadeUp 1.3s ease forwards;
+    animation-delay: 0.3s;
+}
+
+header .intro{
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeUp 1.3s ease forwards;
+    animation-delay: 0.45s;
+}
+
+header .profile{
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeUp 1.3s ease forwards;
+    animation-delay: 0.7s;
+}
+
+header .button{
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeUp 1.3s ease forwards;
+    animation-delay: 0.95s;
+}
+
+header figure{
+    opacity: 0;
+    transform: translateY(20px) scale(0.92);
+    animation: imageIn 1.5s ease forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeUp{
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes imageIn{
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.typing_text{
+    min-height: 90px;
+    white-space: pre-line;
+}
+
+.typing_text::after{
+    content: "|";
+    margin-left: 3px;
+    color: #a48d7b;
+    animation: blink 0.8s infinite;
+}
+
+.typing_text.typing_done::after{
+    display: none;
+}
+
+@keyframes blink{
+    0%, 50%{
+        opacity: 1;
+    }
+
+    51%, 100%{
+        opacity: 0;
+    }
+}
+
+
+/*body::before{
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    z-index: 9998;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 0, 0, 0.05) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.05) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+}
+
+
+body::after{
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 50%;
+
+    width: 4px;
+    height: 100vh;
+
+    background-color: #ff0000;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+
+    z-index: 9999;
+}*/
