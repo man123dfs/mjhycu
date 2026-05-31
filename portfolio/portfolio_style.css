@@ -68,7 +68,8 @@ img{
 }
 
 .container{
-    width: min(1080px, calc(100% - 48px));
+    max-width: 1920px;
+    width: calc(100% - 160px);
     margin: 0 auto;
 }
 
