@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+/* 공통스타일 */
+*{margin:0; padding:0;}
+body{font:15px 'Nanum Gothic', sans-serif;
+	color:#222;}
+	
+a{text-decoration:none;
+	color:#444;}
+	
+
+	
+ul{list-style:none;}
+/* 레이아웃 스타일 */
+/* 먼저 height 하고 내용 적는순간 height를 없앤다 */
+header{
+	min-width:1400px;/* 나중에 잘리는것을 해결해줌 */
+	margin:0 auto;
+	width:100%;
+	height:120px;
+	background:white;
+	position:fixed;
+	z-index:999;
+	box-shadow:0 2px 10px #aaa;
+}
+#wrapper{
+	width:100%;
+	position:relative;
+	top:120px;
+	min-width:1200px;
+	margin:0 auto;
+}
+	.slideWrap{
+		width:100%;
+		height:700px;
+		background:url(../images/slide1.jpg) no-repeat center center;
+		background-size:cover;
+		background-attachment:fixed; /* 배경을 부착시키는 방법 */
+	}
+	.hncWrap{
+		width:100%;
+		background:#fff;
+		padding:80px 0;
+	}
+	.productWrap{
+		width:100%;
+		background:#eee;
+		padding:100px 0;
+	}
+	
+footer{
+	width:100%;
+	background:#ccc;
+	padding:50px 0;
+}
+/* 모든 영역의 cotent 공통스타일 */
+.content{
+	width:1400px;
+	height:100%;
+	margin:0 auto;
+}
+
+/* header style */
+header .content{
+	position:relative; /* 부모 relative 자녀 absolute */
+	
+}
+
+.logo{
+	width:250px;
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);/* 두개 같이써야함 top이랑 아래서부터 50%라는것 */
+
+} /*svc파일은 알아서 header(height:120px) 크기에 맞춰서 줄어줌*/
+nav{
+	position:absolute;
+	right:80px;
+	top:50px;
+	}
+
+/* 주메뉴 style */ /* ★한번더보기 */
+nav>ul{overflow:auto;}
+nav>ul>li{
+	float:left;
+}
+nav>ul>li>a{
+	display:block;
+	padding:5px 20px;
+}
+
+/*서브메뉴 style*/
+nav>ul>li>ul{
+	display:none;
+	padding-top:40px;
+}
+nav>ul>li>ul li{}
+nav>ul>li>ul li a{
+	display:block;
+	background:white;
+	padding:3px 20px;
+	width:200%;
+	height:40px;
+	border-bottom:1px solid #ddd;
+	line-height:40px;
+	position:relative;
+	
+}
+/* span 으로 해서 absolute 해야한다. */
+nav>ul>li>ul li a span{
+	position:absolute;
+	left:10px;
+	transition:0.5s;
+}
+
+nav>ul>li>a:hover+ul,
+nav>ul>li>ul:hover{
+	display:block;
+	} /* 누루거든 바로 아래 ul을 올려라 */
+/* 부모메뉴에는 올리고 내려가면 없어져서 내릴때도 나오게 하는방법 */
+
+nav a:hover,nav a:focus{
+	color:green;
+}
+
+
+nav>ul>li>ul li:hover a span{
+	left:30px;
+}
+
+.search_login{
+	position:absolute;
+	right:0;
+	top:50px;
+	}
+	
+.search_login .material-symbols-outlined:hover{
+	color:green;
+}
+
+/* 슬라이드 영역 */
+.slideWrap .content{
+	position:relative;
+}
+
+.slideWrap .slideTxt{
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	line-height:1.5;
+	color:white;
+	font-size:1.5em;
+	letter-spacing:-1px;
+}
+
+.slideTxt strong{
+	color:#df0;
+}
+.slideTxt em{
+	font-size:1.5em;
+	font-style:normal;}
+.slideTxt a{
+	border:1px solid white;
+	color:white;
+	padding:10px 20px;
+	margin-top:20px;
+	display:inline-block;
+	font-size:0.9em;
+	transition:0.5s;
+}
+
+.slideTxt a:hover{
+	background:white;
+	color:#123456;
+	border:1px solid transparent;
+	}
+
+/* hncWrap과 productWrap 공통*/
+.commonWrap {text-align:center;}
+.commonWrap ul{
+	overflow:auto;
+	margin-top:50px;}
+.commonWrap ul li{
+	width:23.5%;
+	
+	box-sizing:border-box;
+	margin-left:2%;
+	float:left;
+}
+.commonWrap ul li:nth-child(1){margin-left:0;}
+
+/* hncWrap 영역 style */
+.hncWrap ul li{
+	padding:30px 50px;
+	border:1px solid #ddd;
+	height:310px;
+	transition:0.5s;
+	}
+.hncWrap ul span{
+	display:block;
+	line-height:2;}
+.hncWrap ul .icon{
+	width:100px;
+	height:100px;
+	background:#060;
+	border-radius:50%; /* 사각형을 원으로 만들기 */
+	margin:0 auto 20px;
+	line-height:100px;
+	font-size:2em;
+	color:white;
+
+}
+
+.hncWrap ul .tit{
+	font-size:1.4em;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+.hncWrap ul .txt{
+	font-size:0.9em;
+}
+
+.hncWrap ul li:hover{
+	background:#060;
+	color:white;
+}
+.hncWrap ul li:hover .icon{
+	color:#060;
+	background:white;
+}
+
+.hncWrap ul li:hover a{color:white;} 
+
+/* productWrap */
+.productWrap ul{}
+
+
+.productWrap ul li{
+	position:relative;
+	height:275px;
+	overflow:hidden;
+	cursor:pointer;
+	
+}/* 처음 relative,absolute설정했을때 
+안나오면 height나 width값 설정해줘야한다. */
+
+.productWrap ul li>div{
+	width:100%;
+	height:100%; /* 부모 height 크기 따라감 */
+	position:absolute;
+}
+.productWrap ul li .proTxt{
+	
+	background:#060;
+	color:white;
+	text-align:left;
+	padding:20px;
+	box-sizing:border-box;	
+	font-size:1.5em;
+}/* 안보이는 문자열 편집하기위해 먼저 처리(z-index:999=>앞으로 나오게 해놓고 나중에 지움) */
+
+.productWrap ul li .proTxt h3{
+	margin-bottom:25px;
+}
+
+
+/* 여기서부터는 마우스 올리면 이미지 움직이는것 */
+
+.productWrap ul li .proImg{
+	bottom:0px;
+	transition:0.5s;
+}
+
+.productWrap ul li:hover .proImg{
+	/*bottom:-275px; 이렇게 해도 되고*/
+	height:0;
+	/*left:-100%;*/
+} /* 어디로 옮길지 선택하면 됨 */
+
+
+/*abosolute를 설정하면 top값을 먼저 해줘야한다.*/
+.productWrap img{
+	width:100%;
+}
+
+.productWrap .more{
+	background:#060;
+	margin:50px auto 0;
+	width:180px;
+	height:50px;
+	overflow:hidden; /* 이렇게해야  밖에 나갔을때 하나가 안보임 */
+	line-height:50px;  /* 이렇게해야 하나가 안보임 */
+	position:relative; /* 이렇게 해야 움직임 */
+}
+
+.productWrap .more a{
+	
+	color:white;
+	position:absolute; /* 처음 absolute를 하면 우측으로 움직일거임*/
+	left:50%;
+	transform:translateX(-50%);
+	top:0;
+	width:100%;
+	height:100%;
+	transition:0.5s;
+}
+
+.productWrap .more:hover a{
+	top:-50px;
+}
+
+/* footer style */
+footer .content{
+	overflow:auto;
+}
+
+.footerLeft{
+	width:250px;
+	float:left;
+}
+.footerRight{
+	text-align:left;
+	width:850px;
+	float:right;
+	line-height:2.5;
+}
+
+.footerRight address{
+	line-height:1.3;
+	font-style:normal;
+}
+
+.footerRight a:hover{
+	color:#222;
+	font-weight:bold;
+	}
